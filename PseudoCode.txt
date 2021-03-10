@@ -1,0 +1,45 @@
+Item has a name price and quantity
+
+total cost of all units of a single item type
+    self.quantity * self.price
+
+Shop class has an empty dictionary filled containing: 
+    self.inventory.keys() = item name
+    self.inventory.values() = ItemAndQty object
+
+Dictionary shows the full current inventory of the Shop
+
+The addItemAndQty function of the shop class needs to check the dictionary for an items existence
+    if name not in self.inventory.keys():
+        self.inventory[name] = ItemAndQty(name, price, quantity)
+        
+    else
+        update the existing quantity
+
+The loadCSV function needs to read the values from a csv file into the addItemAndQty function
+
+itemAndQtyByName function to search self.inventory by name 
+and return the ItemAndQty object associated with keys
+    if name in self.inventory.keys():
+        return self.inventory[name]
+
+itemInStock function to search self.inventory by calling itemAndQtyByName 
+and returning the quantity in itemInStock
+    if itemAndQtyByName(name):
+        return self.inventory[name].quantity
+
+Shopping basket class which takes a shop object as an argument 
+and has an empty dictionary to put purchase requests in
+
+addItemAndQty function that searches shop.inventory for available items
+Check that quantityAvailable >= quantityRequested
+If true create new entry in self.basket 
+    self.basket.keys() = name
+    self.basket.values() = ItemAndQty(name, price , quantity)   
+Finally amend quantityAvailable - quantityRequested for shop.inventory
+
+totalCost function that iterates through the basket 
+creates ItemAndQty objects cand calls ItemAndQty(name, price, quantity).cost
+
+Finally an empty function to clear the basket
+    self.basket.clear()
