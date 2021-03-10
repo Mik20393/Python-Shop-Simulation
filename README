@@ -1,0 +1,2 @@
+First try at using python to simulate a shop
+The program uploads an initial inventory from a csv file and has a function to simulate adding items to a basket, returning items in stock and adding individual items to the inventory etc
